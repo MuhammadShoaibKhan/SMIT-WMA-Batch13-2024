@@ -1,0 +1,78 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.chess_board{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    display: flex;
+    background-color: rgb(59, 18, 18);
+
+}
+
+.chess_board .number_coordinate{
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    color:white;
+}
+
+.chess_board .number_coordinate div{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chess_board .box .alphabete_coordinate{
+    height: 50px;
+    display: flex;
+    color: white;
+}
+
+.chess_board .box .alphabete_coordinate div{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chess_board .playing_area{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chess_board .playing_area .levels{
+    height: 50px;
+    display: flex;
+
+}
+
+.chess_board .playing_area .levels .color1{
+    width: 50px;
+    background-color: white;
+
+}
+
+.chess_board .playing_area .levels .color2{
+    width: 50px;
+    background-color: rgb(59, 18, 18);
+    
+}
+
+.chess_board .inverse{
+    transform: rotateX(180deg) rotateY(180deg);
+}
