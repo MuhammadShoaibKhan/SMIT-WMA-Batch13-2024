@@ -1,0 +1,38 @@
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+
+.imgcls{
+    background-image: url("images/erik-jan-leusink-IbPxGLgJiMI-unsplash.jpg");
+    background-repeat: no-repeat;
+    object-fit: fill;
+    background-size: 100% 100%;
+    width: 400px;
+    height: 200px;
+    border: 2px solid;
+    color: pink;
+   }
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.card{
+    width: 325px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0,0.2);
+    margin: 20px;
+}
+
+
+

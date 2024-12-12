@@ -1,0 +1,30 @@
+/* General Reset */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+
+
+.image{
+  background-image: url("images/erik-jan-leusink-IbPxGLgJiMI-unsplash.jpg");
+  background-size: 150px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid;
+  color: pink;
+  
+  
+ }
+
+/* <img src="images/erik-jan-leusink-IbPxGLgJiMI-unsplash.jpg" class="medium"/> */

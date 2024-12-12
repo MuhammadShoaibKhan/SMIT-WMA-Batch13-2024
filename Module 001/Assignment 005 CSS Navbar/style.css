@@ -1,0 +1,40 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #e08e1b; /* Background color similar to screenshot */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Menu Styling */
+  .menu {
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+  }
+  
+  .menu-item {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .menu-item:hover {
+    background-color: #000000; /* Dark background on hover */
+    color: #e08e1b; /* White text on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+  
