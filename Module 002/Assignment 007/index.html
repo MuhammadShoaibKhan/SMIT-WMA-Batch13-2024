@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        .card {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="productForm">
+            <input type="text" id="title" placeholder="Enter Product Title" required><br>
+            <input type="text" id="description" placeholder="Enter Product Description" required><br>
+            <input type="text" id="buttonTitle" placeholder="Enter Button Title" required><br>
+            <input type="url" id="buttonLink" placeholder="Enter Button Link" required><br>
+            <input type="url" id="imageLink" placeholder="Enter Image Link (Absolute URL)" required><br>
+            <button type="submit">Create Product</button>
+        </form>
+    </div>
+    <div class="card" id="productCard"></div>
+    
+    <script>
+        document.getElementById("productForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let product = {
+                title: document.getElementById("title").value,
+                description: document.getElementById("description").value,
+                buttonTitle: document.getElementById("buttonTitle").value,
+                buttonLink: document.getElementById("buttonLink").value,
+                imageLink: document.getElementById("imageLink").value
+            };
+            
+            sessionStorage.setItem("title", product.title);
+            sessionStorage.setItem("description", product.description);
+            sessionStorage.setItem("buttonTitle", product.buttonTitle);
+            sessionStorage.setItem("buttonLink", product.buttonLink);
+            sessionStorage.setItem("imageLink", product.imageLink);
+            
+            document.getElementById("productCard").innerHTML = `
+                <img src="${product.imageLink}" alt="Product Image">
+                <h2>${product.title}</h2>
+                <p>${product.description}</p>
+                <a href="${product.buttonLink}" target="_blank">${product.buttonTitle}</a>
+            `;
+        });
+    </script>
+</body>
+</html>

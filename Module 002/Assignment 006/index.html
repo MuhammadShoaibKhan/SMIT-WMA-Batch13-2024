@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 1s ease;
+        }
+
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .digital-clock {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .analog-clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 8px solid white;
+            border-radius: 50%;
+        }
+
+        .hand {
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: white;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 50%;
+            transform: rotate(90deg);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .minute-hand {
+            height: 3px;
+        }
+
+        .second-hand {
+            background: red;
+            height: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="digital-clock" id="digital-clock"></div>
+        <div class="analog-clock">
+            <div class="hand hour-hand" id="hour-hand"></div>
+            <div class="hand minute-hand" id="minute-hand"></div>
+            <div class="hand second-hand" id="second-hand"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Update digital clock
+            document.getElementById('digital-clock').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            // Update analog clock
+            const hourDeg = (hours % 12) * 30 + minutes * 0.5;
+            const minuteDeg = minutes * 6;
+            const secondDeg = seconds * 6;
+
+            document.getElementById('hour-hand').style.transform = `rotate(${hourDeg}deg)`;
+            document.getElementById('minute-hand').style.transform = `rotate(${minuteDeg}deg)`;
+            document.getElementById('second-hand').style.transform = `rotate(${secondDeg}deg)`;
+
+            // Update background color based on time of day
+            updateBackgroundColor(hours);
+        }
+
+        function updateBackgroundColor(hours) {
+            let bgColor;
+            if (hours >= 6 && hours < 12) {
+                bgColor = '#FFFAE3'; // Morning - Light Yellow
+            } else if (hours >= 12 && hours < 18) {
+                bgColor = '#FFD580'; // Afternoon - Soft Orange
+            } else if (hours >= 18 && hours < 20) {
+                bgColor = '#FFA07A'; // Evening - Light Salmon
+            } else {
+                bgColor = '#2C3E50'; // Night - Dark Blue
+            }
+            document.body.style.backgroundColor = bgColor;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to set immediately on load
+    </script>
+</body>
+</html>
