@@ -1,0 +1,145 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+
+}
+
+
+/* login */
+
+.login{
+    width: 50%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login h1 {
+    text-align: end;
+    padding: 5px;
+}
+
+.login input{
+    display: block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+}
+
+.login button{
+    width: 100%;
+    padding: 5px 10px;
+    background: black;
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+}
+
+.login button:hover{
+    background: transparent;
+    color: black;
+}
+
+/* header */
+
+header{
+    background: black;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+header ul li a{
+    color: white;
+}
+
+.notifi{
+    background: greenyellow;
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* post  */
+
+.main_content{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.main_content .post_form{
+    width: 300px;
+    margin: 10px auto;
+    box-shadow: rgb(red, green, blue, 0.16) 0px 1px 4px;
+    padding: 30px;
+}
+
+.main_content .post_form input, textarea{
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px 0;
+    margin: 20px 0;
+}
+
+.main_content .post_form button{
+    width: 100%;
+    background: black;
+    color:white;
+    padding: 5px 0;
+    border: 1px solid black;
+    transition: 0.5s ease-in-out;
+}
+
+.main_content .post_form button:hover{
+    background: transparent;
+}
+
+/* update_btn */
+
+.my_blog{
+    display: none;
+}
+
+.update_btn{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+/* notify styling  */
+
+.notifiy{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: green;
+    color: white;
+    margin-top: 70px;
+}
